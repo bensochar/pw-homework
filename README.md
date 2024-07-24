@@ -13,6 +13,16 @@ cd pw
 
 Uses Ruby 3.2.2 & postgres
 
+Postgres with brew:
+
+```
+brew install postgresql@15
+brew services start postgresql@15
+brew services list
+```
+
+Ruby:
+
 ```bash
 rvm use
 bundle install

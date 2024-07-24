@@ -12,14 +12,6 @@
     <%= f.input :country %>
   </div>
 
-  <% if current_client %>
-    <%= f.simple_fields_for :custom_fields do |cf| %>
-      <% current_client.custom_fields.each do |ccf| %>
-      <%= ccf.value %>
-        <%= ccf.input ccf.name.to_sym, input_html: {value: ccf.value} %>
-      <% end %>
-    <% end %>
-  <% end %>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
