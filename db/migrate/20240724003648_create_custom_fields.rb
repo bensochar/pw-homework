@@ -8,4 +8,5 @@ class CreateCustomFields < ActiveRecord::Migration[7.1]
       t.timestamps
     end
   end
+  add_index :custom_fields, :config, using: :gin
 end

@@ -8,8 +8,11 @@ class BuildingsController < ApplicationController
     @pagy, @buildings = pagy(Building.includes(:client).all)
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @buildings, include: [:client, :custom_fields] }
-     end
+      # format.json { render json: @buildings, include: [:client, :custom_fields] }
+      format.json do
+        render status: :ok, json: BuildingBlueprint.render(@buildings)
+      end
+    end
   end
 
   # GET /buildings/1

@@ -46,11 +46,6 @@ CustomField::Enum.create(client: client,
   )
 end
 
-# t.string "street_address"
-# t.string "city"
-# t.string "state"
-# t.string "postcode"
-# t.string "country"
 60.times do 
 client = Client.order('RANDOM()').first
 Building.create(client: client,

@@ -47,8 +47,10 @@ gem "simple_form", "~> 5.3"
 gem "bootstrap", "~> 5.3"
 gem "sassc-rails", "~> 2.1"
 gem "pagy", "~> 9.0"
-gem "activerecord_json_validator"
 gem "country_select", "~> 9.0"
+gem "jsonb_accessor"
+gem "oj"
+gem "blueprinter"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

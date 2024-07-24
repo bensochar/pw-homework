@@ -31,3 +31,23 @@ bundle exec rails db:seed
 ```bash
 rails s
 ```
+
+### 5. Using the app
+
+The navbar lists Clients & Bulidings. You can login as any User using their email & the password `123456`. The JSON for the API can be viewed here: [http://localhost:3000/buildings.json?page=2](http://localhost:3000/buildings.json?page=2)
+
+### 6. Custom fields
+
+3 types. String, Integer & Enum with data (name, value & options) stored in JSONb. Creating new fields & validating them:
+
+```
+field = CustomField::Integer.new(client: Client.first, name: 'dude', value: '1')
+field.valid?
+=> false
+```
+
+```
+field = CustomField::Integer.new(client: Client.first, name: 'dude', value: 0)
+field.valid?
+=> true
+```
