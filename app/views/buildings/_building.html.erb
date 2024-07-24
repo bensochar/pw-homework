@@ -1,0 +1,20 @@
+<div id="<%= dom_id building %>">
+  <dl>
+    <dt>Client</dt>
+    <dd><%= link_to_if building.client, building.client.name, building.client %></dd>
+    <dt>Street address</dt>
+    <dd><%= building.street_address %></dd>
+    <dt>City</dt>
+    <dd><%= building.city %></dd>
+    <dt>State</dt>
+    <dd><%= building.state %></dd>
+    <dt>Postcode</dt>
+    <dd><%= building.postcode %></dd>
+    <dt>Country</dt>
+    <dd><%= building.country %></dd>
+    <% building.custom_fields.each do |field| %>
+      <dt><%= field.label %></dt>
+      <dd><%= field.value %></dd>
+    <% end %>
+  </dl>
+</div>

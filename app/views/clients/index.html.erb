@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="d-flex justify-content-between">
+  <h1 class="my-0">Clients</h1>
+  <%= link_to "New client", new_client_path, class: 'btn btn-primary my-auto' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each_with_index do |client, index| %>
+    <tr>
+      <th scope="row"><%= "#{index}" %></th>
+      <td><%= link_to "#{client.name}", client %></td>
+      <td><%= client.email %></td>
+    </tr>
+     <% end %>
+  </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

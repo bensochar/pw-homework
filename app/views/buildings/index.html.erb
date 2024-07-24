@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between">
+  <h1 class="my-0">Buildings</h1>
+  <%= link_to "New building", new_building_path, class: 'btn btn-primary my-auto' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Address</th>
+      <th scope="col">Client</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buildings.each do |building| %>
+    <tr>
+      <th scope="row"><%= "#{building.id}" %></th>
+      <td><%= link_to building.address, building %></td>
+      <td><%= link_to building.client.name, building.client %></td>
+    </tr>
+     <% end %>
+  </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
